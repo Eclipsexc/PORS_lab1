@@ -1,0 +1,17 @@
+2026-03-01 02:43:15 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 18752 (D:\Code\Java\Hon-Spring\Lab-1\target\classes started by home in D:\Code\Java\Hon-Spring)
+2026-03-01 02:43:15 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-01 02:43:15 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-01 02:43:15 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-01 02:43:15 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-01 02:43:15 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-01 02:43:15 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-01 02:43:16 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 668 ms
+2026-03-01 02:43:16 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-01 02:43:16 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-01 02:43:16 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-01 02:43:16 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 1.353 seconds (process running for 1.783)
+2026-03-01 02:43:24 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-01 02:43:24 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-01 02:43:24 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-03-01 02:44:20 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-01 02:44:20 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort — Lab 1</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 40px 16px; }
+        .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.1); padding: 32px; width: 100%; max-width: 520px; }
+        h1 { font-size: 1.4rem; margin-bottom: 24px; text-align: center; }
+        label { display: block; font-weight: 600; margin-bottom: 4px; font-size: .9rem; }
+        select, input[type="number"], input[type="text"] { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: .95rem; margin-bottom: 16px; }
+        input[type="text"]:disabled, input[type="number"]:disabled { background: #f3f4f6; color: #9ca3af; cursor: not-allowed; }
+        .checkbox-group { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+        .checkbox-group input { width: 18px; height: 18px; }
+        .radio-group { display: flex; gap: 24px; margin-bottom: 16px; }
+        .radio-group label { font-weight: 500; display: flex; align-items: center; gap: 6px; margin-bottom: 0; cursor: pointer; }
+        .radio-group input[type="radio"] { width: 16px; height: 16px; }
+        .section-label { font-weight: 600; font-size: .9rem; margin-bottom: 8px; }
+        .source-section { border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+        hr { border: none; border-top: 1px solid #e5e7eb; margin: 16px 0; }
+        .hint { font-size: .8rem; color: #6b7280; margin-top: -12px; margin-bottom: 4px; }
+        button { width: 100%; padding: 10px; background: #4f46e5; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background .2s; }
+        button:hover { background: #4338ca; }
+        button:disabled { background: #a5b4fc; cursor: not-allowed; }
+        .btn-download { margin-top: 12px; background: #0f766e; }
+        .btn-download:hover { background: #0d9488; }
+        .result { margin-top: 24px; padding: 16px; border-radius: 8px; background: #f9fafb; border: 1px solid #e5e7eb; display: none; }
+        .result h2 { font-size: 1rem; margin-bottom: 8px; }
+        .result .duration { color: #16a34a; font-weight: 600; }
+        .result .array-output { margin-top: 8px; max-height: 200px; overflow-y: auto; word-break: break-all; font-family: monospace; font-size: .85rem; color: #374151; }
+        .error { margin-top: 16px; padding: 12px; border-radius: 8px; background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; display: none; font-size: .9rem; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Merge Sort</h1>
+
+    <form id="sortForm">
+        <label for="implementation">Реалізація</label>
+        <select id="implementation" required>
+            <option value="SEQUENTIAL">SEQUENTIAL</option>
+            <option value="PARALLEL">PARALLEL</option>
+        </select>
+
+        <hr>
+
+        <div class="section-label">Джерело даних</div>
+        <div class="radio-group">
+            <label><input type="radio" name="source" value="generate" checked> Генерувати масив</label>
+            <label><input type="radio" name="source" value="file"> Зчитати з файлу</label>
+        </div>
+
+        <div class="source-section">
+            <div id="panelGenerate">
+                <label for="generateLength">Довжина масиву</label>
+                <input type="number" id="generateLength" min="1" max="100000000" value="1000">
+            </div>
+            <div id="panelFile" style="display:none">
+                <label for="sourceFilePath">Шлях до файлу</label>
+                <input type="text" id="sourceFilePath" placeholder="D:\data\array.json" disabled>
+                <p class="hint">Файл повинен містити JSON-масив цілих чисел, напр. <code>[3, 1, 4, 7]</code></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="includeArray">
+            <label for="includeArray">Включити відсортований масив у відповідь</label>
+        </div>
+
+        <label for="fileName">Назва файлу для збереження вхідних даних</label>
+        <input type="text" id="fileName" placeholder="my-request" required>
+
+        <button type="submit" id="submitBtn">Сортувати</button>
+    </form>
+
+    <div class="error" id="error"></div>
+
+    <div class="result" id="result">
+        <h2>Результат</h2>
+        <p>Час виконання: <span class="duration" id="duration"></span></p>
+        <div class="array-output" id="sortedArray"></div>
+        <button type="button" class="btn-download" id="downloadBtn">Скачати відповідь</button>
+    </div>
+</div>
+
+<script>
+    const form          = document.getElementById('sortForm');
+    const submitBtn     = document.getElementById('submitBtn');
+    const resultDiv     = document.getElementById('result');
+    const errorDiv      = document.getElementById('error');
+    const durationSpan  = document.getElementById('duration');
+    const sortedArrayDiv = document.getElementById('sortedArray');
+    const downloadBtn   = document.getElementById('downloadBtn');
+    const panelGenerate = document.getElementById('panelGenerate');
+    const panelFile     = document.getElementById('panelFile');
+    const generateLenEl = document.getElementById('generateLength');
+    const sourceFileEl  = document.getElementById('sourceFilePath');
+
+    let lastResponse = null;
+
+    document.querySelectorAll('input[name="source"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            const isFile = radio.value === 'file' && radio.checked;
+            panelGenerate.style.display = isFile ? 'none' : 'block';
+            panelFile.style.display     = isFile ? 'block' : 'none';
+            generateLenEl.disabled = isFile;
+            sourceFileEl.disabled  = !isFile;
+        });
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        resultDiv.style.display = 'none';
+        errorDiv.style.display  = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Обробка…';
+
+        const isFile = document.querySelector('input[name="source"]:checked').value === 'file';
+
+        const body = {
+            implementation: document.getElementById('implementation').value,
+            includeSortedArrayInResponse: document.getElementById('includeArray').checked,
+            fileName: document.getElementById('fileName').value.trim(),
+            ...(isFile
+                ? { sourceFilePath: sourceFileEl.value.trim() }
+                : { arrayLengthToGenerate: parseInt(generateLenEl.value, 10) })
+        };
+
+        try {
+            const res = await fetch('/merge-sort', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body)
+            });
+
+            if (!res.ok) {
+                const ct = res.headers.get('content-type') || '';
+                const errBody = ct.includes('application/json') ? await res.json() : await res.text();
+                throw new Error(typeof errBody === 'object' ? JSON.stringify(errBody, null, 2) : errBody || `HTTP ${res.status}`);
+            }
+
+            const data = await res.json();
+            lastResponse = data;
+            durationSpan.textContent = data.durationInMs + ' мс';
+            sortedArrayDiv.textContent = data.sortedArray || '—';
+            resultDiv.style.display = 'block';
+        } catch (err) {
+            errorDiv.textContent = err.message;
+            errorDiv.style.display = 'block';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Сортувати';
+        }
+    });
+
+    downloadBtn.addEventListener('click', () => {
+        if (!lastResponse) return;
+        const blob = new Blob([JSON.stringify(lastResponse, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'merge-sort-response.json';
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+</script>
+</body>
+</html>

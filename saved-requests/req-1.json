@@ -1,0 +1,7 @@
+{
+  "implementation" : "SEQUENTIAL",
+  "arrayLengthToGenerate" : null,
+  "sourceFilePath" : "D:\\Code\\Java\\Hon-Spring\\example.json",
+  "includeSortedArrayInResponse" : true,
+  "fileName" : "req-1"
+}

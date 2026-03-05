@@ -1,0 +1,7 @@
+{
+  "implementation" : "PARALLEL",
+  "arrayLengthToGenerate" : null,
+  "sourceFilePath" : "C:\\Users\\Eclipse\\PORS_Lab1_nulp\\array_200k.json",
+  "includeSortedArrayInResponse" : true,
+  "fileName" : "new_test"
+}
