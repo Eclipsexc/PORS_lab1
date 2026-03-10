@@ -16,8 +16,16 @@ public class MergeSortController {
         this.mediatorService = mediatorService;
     }
 
+    @GetMapping("/capabilities")
+    public CapabilitiesResponse capabilities() {
+        int maxThreads = Runtime.getRuntime().availableProcessors();
+        return new CapabilitiesResponse(maxThreads);
+    }
+
     @PostMapping
     public MergeSortResponse sort(@RequestBody @Valid MergeSortRequest request) {
         return mediatorService.execute(request);
     }
+
+    public record CapabilitiesResponse(int maxThreads) {}
 }

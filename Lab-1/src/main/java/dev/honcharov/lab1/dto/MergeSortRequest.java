@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record MergeSortRequest (
+public record MergeSortRequest(
 
         @NotNull(message = "implementation can't be null")
         Implementation implementation,
@@ -16,10 +16,13 @@ public record MergeSortRequest (
 
         String sourceFilePath,
 
-        @NotNull(message = "includeSortedArrayInResponse can't be null")
         boolean includeSortedArrayInResponse,
 
         @NotNull(message = "fileName can't be null")
         @NotBlank(message = "fileName can't be blank")
-        String fileName
+        String fileName,
+
+        @Min(value = 1, message = "threads can't be smaller than 1")
+        @Max(value = 256, message = "threads can't be bigger than 256")
+        Integer threads
 ) {}

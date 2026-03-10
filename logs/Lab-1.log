@@ -66,3 +66,127 @@
 2026-03-05 04:56:30 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
 2026-03-05 05:08:41 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
 2026-03-05 05:08:41 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 12:50:56 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 22072 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 12:50:56 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 12:50:57 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 12:50:58 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 12:50:58 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 12:50:58 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 12:50:58 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 12:50:58 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1817 ms
+2026-03-05 12:50:58 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 12:50:59 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 12:50:59 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 12:50:59 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.485 seconds (process running for 8.694)
+2026-03-05 12:51:19 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-05 12:51:19 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-05 12:51:19 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2026-03-05 13:15:23 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 13:15:23 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 13:15:28 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 4508 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:15:28 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:15:29 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:15:30 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:15:30 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:15:30 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:15:30 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:15:30 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2004 ms
+2026-03-05 13:15:31 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:15:31 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 14516 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:15:31 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:15:31 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:15:31 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 13:15:31 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.771 seconds (process running for 4.48)
+2026-03-05 13:15:31 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:15:33 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:15:33 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:15:33 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:15:33 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:15:33 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1716 ms
+2026-03-05 13:15:33 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:15:33 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:15:33 [WARN] o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-03-05 13:15:33 [INFO] o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-05 13:15:33 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2026-03-05 13:15:56 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-05 13:15:56 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-05 13:15:56 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-03-05 13:32:55 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 13:32:55 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 13:34:36 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 18548 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:34:36 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:34:37 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:34:38 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:34:38 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:34:38 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:34:38 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:34:38 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1737 ms
+2026-03-05 13:34:38 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:34:39 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:34:39 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 13:34:39 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.437 seconds (process running for 4.085)
+2026-03-05 13:36:48 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 13:36:48 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 13:36:51 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 34712 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:36:51 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:36:52 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:36:53 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:36:53 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:36:53 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:36:53 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:36:53 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1694 ms
+2026-03-05 13:36:53 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:36:53 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:36:54 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 13:36:54 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.4 seconds (process running for 4.089)
+2026-03-05 13:40:02 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 13:40:02 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 13:40:06 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 21264 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:40:06 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:40:06 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:40:08 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:40:08 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:40:08 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:40:08 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:40:08 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1789 ms
+2026-03-05 13:40:08 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:40:08 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:40:08 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 13:40:09 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.473 seconds (process running for 4.109)
+2026-03-05 13:43:05 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-05 13:43:05 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-05 13:43:05 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-03-05 13:52:31 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 13:52:31 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-05 13:52:35 [INFO] dev.honcharov.lab1.Lab1Application - Starting Lab1Application using Java 21.0.7 with PID 4112 (C:\Users\Eclipse\PORS_Lab1_nulp\Lab-1\target\classes started by Eclipse in C:\Users\Eclipse\PORS_Lab1_nulp)
+2026-03-05 13:52:35 [INFO] dev.honcharov.lab1.Lab1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-05 13:52:36 [INFO] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-05 13:52:37 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-05 13:52:37 [INFO] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:52:37 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-05 13:52:37 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-05 13:52:37 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1648 ms
+2026-03-05 13:52:37 [INFO] o.s.b.w.a.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-03-05 13:52:38 [INFO] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-05 13:52:38 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-05 13:52:38 [INFO] dev.honcharov.lab1.Lab1Application - Started Lab1Application in 3.394 seconds (process running for 4.125)
+2026-03-05 13:52:39 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-05 13:52:39 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-05 13:52:39 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-03-05 14:00:33 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-05 14:00:33 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete

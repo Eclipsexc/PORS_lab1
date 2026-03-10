@@ -42,4 +42,5 @@ public class Lab1Application {
             System.out.println();
         };
     }
+
 }

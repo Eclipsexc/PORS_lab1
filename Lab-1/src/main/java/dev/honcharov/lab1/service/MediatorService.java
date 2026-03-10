@@ -3,7 +3,6 @@ package dev.honcharov.lab1.service;
 import dev.honcharov.lab1.dto.Implementation;
 import dev.honcharov.lab1.dto.MergeSortRequest;
 import dev.honcharov.lab1.dto.MergeSortResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tools.jackson.databind.ObjectMapper;
@@ -14,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
 
 @Service
 public class MediatorService {
@@ -28,7 +28,12 @@ public class MediatorService {
     @Value("${app.save-dir:saved-requests}")
     private String saveDir;
 
-    public MediatorService(Random randomNumberGenerator, ParallelMergeSort parallelMergeSort, SequentialMergeSort sequentialMergeSort, ObjectMapper objectMapper) {
+    public MediatorService(
+            Random randomNumberGenerator,
+            ParallelMergeSort parallelMergeSort,
+            SequentialMergeSort sequentialMergeSort,
+            ObjectMapper objectMapper
+    ) {
         this.randomNumberGenerator = randomNumberGenerator;
         this.parallelMergeSort = parallelMergeSort;
         this.sequentialMergeSort = sequentialMergeSort;
@@ -38,14 +43,22 @@ public class MediatorService {
     public MergeSortResponse execute(MergeSortRequest request) {
         saveRequest(request);
 
-        MergeSort mergeSort = request.implementation() == Implementation.PARALLEL
-                ? parallelMergeSort
-                : sequentialMergeSort;
-
         int[] array = resolveArray(request);
 
         long start = System.currentTimeMillis();
-        mergeSort.mergeSort(array, 0, array.length - 1);
+
+        if (request.implementation() == Implementation.PARALLEL) {
+            int maxThreads = Runtime.getRuntime().availableProcessors();
+            int threads = normalizeThreads(request.threads(), maxThreads);
+
+            ForkJoinPool pool = new ForkJoinPool(threads);
+            ParallelMergeSort perRequestParallel = new ParallelMergeSort(pool, threads);
+            perRequestParallel.mergeSort(array, 0, array.length - 1);
+            pool.shutdown();
+        } else {
+            sequentialMergeSort.mergeSort(array, 0, array.length - 1);
+        }
+
         long duration = System.currentTimeMillis() - start;
 
         String responseArray = request.includeSortedArrayInResponse()
@@ -53,6 +66,13 @@ public class MediatorService {
                 : null;
 
         return new MergeSortResponse(responseArray, duration);
+    }
+
+    private int normalizeThreads(Integer requested, int maxThreads) {
+        if (requested == null) return maxThreads;
+        if (requested < 1) return 1;
+        if (requested > maxThreads) return maxThreads;
+        return requested;
     }
 
     private int[] resolveArray(MergeSortRequest request) {

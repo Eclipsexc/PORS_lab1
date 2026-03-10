@@ -1,8 +1,8 @@
 {
   "implementation" : "PARALLEL",
-  "arrayLengthToGenerate" : 1000,
+  "arrayLengthToGenerate" : 10000000,
   "sourceFilePath" : null,
   "includeSortedArrayInResponse" : true,
-  "fileName" : "new_test",
-  "threads" : 10
+  "fileName" : "new_test33",
+  "threads" : 12
 }
